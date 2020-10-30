@@ -104,9 +104,9 @@ int main()
         d_db /= 2;
         b_db[1] = 2.00001 + d_db;
 
-        matmultiplication_db(invA_db, b_db, result2_db);
+        matmultiplication_d(invA_db, b_db, result2_db);
 
-        ds_db = distance(result1_db, result2_db);
+        ds_db = distance_d(result1_db, result2_db);
     }
 
     while (ds_f > 0.000001)
@@ -119,7 +119,7 @@ int main()
 
         matmultiplication_f(invA_f, b_f, result2_f);
 
-        ds_f = distance(result1_f, result2_f);
+        ds_f = distance_f(result1_f, result2_f);
     }
     printf("Result for Double: \n");
     printf("last D =\t%.20f\nDistance =\t\t%.7f\n\nstopping D =\t%.20f\nDistance =\t\t%.7f\n", dprev_db, dsprev_db, d_db, ds_db);
