@@ -69,7 +69,7 @@ int main()
     float b_f[2] = {2.0, 2.00001 + d_f};
 
     float invA_f[4];
-    inverse_f(A_f, invA_f, norm_f(A));
+    inverse_f(A_f, invA_f, norm_f(A_f   ));
 
     float result1_f[2] = {1.0, 1.0}; // Координата  b = {2.0, 2.00001}
 
@@ -86,7 +86,7 @@ int main()
     double b_db[2] = {2.0, 2.00001 + d_db};
 
     double invA_db[4];
-    inverse_d(A_db, invA_db, norm_db(A));
+    inverse_d(A_db, invA_db, norm_db(A_db));
 
     double result1_db[2] = {1.0, 1.0}; // Координата  b = {2.0, 2.00001}
 
