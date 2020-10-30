@@ -1,10 +1,34 @@
 #include <stdio.h>
 #include <math.h>
 
-float distance(double *p1, double *p2);
-float norm(double *mat);
-void inverse(float *mat, float *inv, float norm);
-void matmultiplication(float *mat1, float *mat2, float *result);
+
+float distance(double *p1, double *p2)
+{
+    return sqrt(pow((p1[0] - p2[0]), 2) + pow((p1[1] - p2[1]), 2));
+}
+
+
+float norm(double *mat)
+{
+    return mat[0] * mat[3] - mat[1] * mat[2];
+}
+
+
+
+void inverse (float *mat, float *inv, float norm)
+{
+    inv[0] = mat[3]/norm;
+    inv[1] = -mat[1]/norm;
+    inv[2] = -mat[2]/norm;
+    inv[3] = mat[0]/norm;
+}
+
+
+void matmultiplication (float *mat1, float *mat2, float *result)
+{
+    result[0] = mat1[0] * mat2[0] + mat1[1] * mat2[1];
+    result[1] = mat1[2] * mat2[0] + mat1[3] * mat2[1];
+}
 
 int main()
 {
@@ -44,30 +68,3 @@ int main()
 
 }
 
-float distance(double *p1, double *p2)
-{
-    return sqrt(pow((p1[0] - p2[0]), 2) + pow((p1[1] - p2[1]), 2));
-}
-
-
-float norm(double *mat)
-{
-    return mat[0] * mat[3] - mat[1] * mat[2];
-}
-
-
-
-void inverse (float *mat, float *inv, float norm)
-{
-    inv[0] = mat[3]/norm;
-    inv[1] = -mat[1]/norm;
-    inv[2] = -mat[2]/norm;
-    inv[3] = mat[0]/norm;
-}
-
-
-void matmultiplication (float *mat1, float *mat2, float *result)
-{
-    result[0] = mat1[0] * mat2[0] + mat1[1] * mat2[1];
-    result[1] = mat1[2] * mat2[0] + mat1[3] * mat2[1];
-}
