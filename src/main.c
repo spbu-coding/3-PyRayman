@@ -2,13 +2,13 @@
 #include <math.h>
 
 
-float distance(double *p1, double *p2)
+float distance(float *p1, float *p2)
 {
     return sqrt(pow((p1[0] - p2[0]), 2) + pow((p1[1] - p2[1]), 2));
 }
 
 
-float norm(double *mat)
+float norm(float *mat)
 {
     return mat[0] * mat[3] - mat[1] * mat[2];
 }
