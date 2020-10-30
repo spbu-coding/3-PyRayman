@@ -86,14 +86,14 @@ int main()
     double b_db[2] = {2.0, 2.00001 + d_db};
 
     double invA_db[4];
-    inverse_f(A_db, invA_db, norm_db(A));
+    inverse_d(A_db, invA_db, norm_db(A));
 
     double result1_db[2] = {1.0, 1.0}; // Координата  b = {2.0, 2.00001}
 
     double result2_db[2]; // Координата  b = {2.0, 2.00001 + d}
-    matmultiplication_db(invA_db, b_db, result2_db);
+    matmultiplication_d(invA_db, b_db, result2_db);
 
-    ds_db = distance_db(result1_db, result2_db);
+    ds_db = distance_d(result1_db, result2_db);
 
 
     while (ds_db > 0.000001)
